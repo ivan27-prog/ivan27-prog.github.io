@@ -1,0 +1,746 @@
+/* ================================================
+   VARIABLES Paleta Aurora Boreal
+   ================================================ */
+:root {
+    --aurora-green: #39FF8F;
+    --aurora-green-dark: #00C96B;
+    --aurora-purple: #BF5FFF;
+    --aurora-pink: #FF4FD8;
+    --bg-dark: #050A0E;
+    --bg-card: #0D1B22;
+    --text-muted-aurora: #7A9AAD;
+}
+
+/* ================================================
+   BASE
+   ================================================ */
+body {
+    background-color: var(--bg-dark);
+    color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* ================================================
+   NAVBAR
+   Docs: https://getbootstrap.com/docs/5.3/components/navbar/
+   ================================================ */
+#mainNavbar {
+    background-color: transparent;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+    padding: 1rem 0;
+}
+
+/* Clase que agrega JS al hacer scroll */
+#mainNavbar.scrolled {
+    background-color: rgba(5, 10, 14, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 2px 20px rgba(57, 255, 143, 0.15);
+}
+
+/* Brand / Logo */
+.navbar-brand {
+    color: var(--aurora-green) !important;
+    font-size: 1.4rem;
+    letter-spacing: 3px;
+}
+
+/* Links del nav */
+.nav-link {
+    color: rgba(255, 255, 255, 0.85) !important;
+    transition: color 0.3s ease;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+}
+
+.nav-link:hover {
+    color: var(--aurora-green) !important;
+}
+
+/* Boton hamburguesa en movil */
+.navbar-toggler {
+    border-color: rgba(57, 255, 143, 0.4);
+}
+
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+/* ================================================
+   HERO SECTION
+   ================================================ */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px; /* compensa la navbar fixed-top */
+    padding-bottom: 60px;
+}
+
+/* Badge "Disponible para trabajar" */
+.badge-aurora {
+    background-color: rgba(57, 255, 143, 0.15);
+    color: var(--aurora-green);
+    border: 1px solid rgba(57, 255, 143, 0.4);
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 0.5em 1em;
+    border-radius: 50px;
+    letter-spacing: 0.5px;
+}
+
+/* Saludo */
+.hero-greeting {
+    color: var(--text-muted-aurora);
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+/* Nombre con gradiente aurora */
+.hero-name {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 800;
+    background: linear-gradient(90deg, var(--aurora-green), var(--aurora-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.1;
+}
+
+/* Titulo profesional */
+.hero-title {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* Descripcion */
+.hero-description {
+    color: var(--text-muted-aurora);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* Boton primario — verde aurora */
+.btn-aurora-primary {
+    background: linear-gradient(135deg, var(--aurora-green), var(--aurora-green-dark));
+    color: #050A0E;
+    font-weight: 700;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-aurora-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(57, 255, 143, 0.4);
+    color: #050A0E;
+}
+
+/* Boton secundario — outline morado */
+.btn-aurora-outline {
+    background: transparent;
+    color: var(--aurora-purple);
+    font-weight: 700;
+    border: 2px solid var(--aurora-purple);
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.btn-aurora-outline:hover {
+    background: rgba(191, 95, 255, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(191, 95, 255, 0.35);
+    color: var(--aurora-purple);
+}
+
+/* Foto circular con glow */
+.hero-photo-wrapper {
+    display: inline-block;
+    position: relative;
+}
+
+.hero-photo {
+    width: 220px;
+    height: 270px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 50% / 40%;
+    border: 3px solid var(--aurora-green);
+    box-shadow: 0 0 30px rgba(57, 255, 143, 0.45), 0 0 80px rgba(191, 95, 255, 0.25);
+    transition: box-shadow 0.4s ease;
+}
+.hero-photo:hover {
+    box-shadow: 0 0 55px rgba(57, 255, 143, 0.65), 0 0 110px rgba(191, 95, 255, 0.4);
+}
+@media (max-width: 992px) {
+    .hero-photo { width: 180px; height: 220px; }
+}
+
+/* ================================================
+   HERO — Extras (ubicacion y redes sociales)
+   ================================================ */
+.hero-location {
+    color: var(--text-muted-aurora);
+    font-size: 0.95rem;
+}
+
+.hero-location i {
+    color: var(--aurora-green);
+}
+
+/* Botones de redes sociales (icono circular) */
+.btn-social {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid rgba(57, 255, 143, 0.35);
+    color: var(--aurora-green);
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.btn-social:hover {
+    background: rgba(57, 255, 143, 0.15);
+    border-color: var(--aurora-green);
+    color: var(--aurora-green);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(57, 255, 143, 0.3);
+}
+
+.btn-social:nth-child(2):hover {
+    border-color: var(--aurora-purple);
+    color: var(--aurora-purple);
+    background: rgba(191, 95, 255, 0.15);
+    box-shadow: 0 6px 20px rgba(191, 95, 255, 0.3);
+}
+
+/* ================================================
+   ESTILOS COMPARTIDOS DE SECCIONES
+   ================================================ */
+section {
+    padding: 90px 0;
+}
+
+/* Titulo de cada seccion */
+.section-title {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+/* Palabra resaltada en verde */
+.text-aurora-green {
+    color: var(--aurora-green);
+}
+
+/* Palabra resaltada en morado */
+.text-aurora-purple {
+    color: var(--aurora-purple);
+    font-size: 0.9em;
+}
+
+/* Linea decorativa bajo el titulo */
+.section-divider {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--aurora-green), var(--aurora-purple));
+    margin: 0.75rem auto 0;
+    border-radius: 2px;
+}
+
+/* Link estilo aurora */
+.link-aurora {
+    color: var(--aurora-green);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.link-aurora:hover {
+    color: var(--aurora-purple);
+    text-decoration: underline;
+}
+
+
+/* ================================================
+   SOBRE MI
+   ================================================ */
+.sobre-section {
+    background-color: var(--bg-dark);
+}
+
+/* Foto ovalada */
+.sobre-photo {
+    width: 260px;
+    height: 320px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 50% / 40%;
+    border: 3px solid var(--aurora-purple);
+    box-shadow:
+        0 0 30px rgba(191, 95, 255, 0.35),
+        0 0 70px rgba(57, 255, 143, 0.15);
+    transition: box-shadow 0.4s ease;
+}
+
+.sobre-photo:hover {
+    box-shadow:
+        0 0 50px rgba(191, 95, 255, 0.55),
+        0 0 100px rgba(57, 255, 143, 0.25);
+}
+
+/* Texto descripcion */
+.sobre-description {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    line-height: 1.9;
+}
+
+/* Card de datos */
+.sobre-card {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(57, 255, 143, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Cada fila de la lista */
+.sobre-list-item {
+    background-color: transparent;
+    color: #ffffff;
+    border-color: rgba(57, 255, 143, 0.1);
+    padding: 0.85rem 1.25rem;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    flex-wrap: wrap;
+}
+
+.sobre-list-item:last-child {
+    border-bottom: none;
+}
+
+/* Icono verde de cada item */
+.icon-aurora {
+    color: var(--aurora-green);
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+/* Etiqueta "Nombre:", "Email:", etc. */
+.label-muted {
+    color: var(--text-muted-aurora);
+    margin-right: 0.4rem;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+
+
+/* ================================================
+   SKILLS
+   ================================================ */
+.skills-section {
+    background-color: var(--bg-card);
+}
+
+/* Card de cada categoria */
+.skill-card {
+    background-color: var(--bg-dark);
+    border: 1px solid rgba(57, 255, 143, 0.15);
+    border-radius: 14px;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(57, 255, 143, 0.5);
+    box-shadow: 0 10px 30px rgba(57, 255, 143, 0.15);
+}
+
+/* Icono grande de cada card */
+.skill-card-icon {
+    font-size: 2rem;
+    color: var(--aurora-green);
+    line-height: 1;
+}
+
+/* Icono inline (habilidades blandas) */
+.skill-card-icon-inline {
+    font-size: 1.4rem;
+    color: var(--aurora-purple);
+}
+
+/* Titulo de la card */
+.skill-card-title {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+/* Badge de skill tecnica — verde aurora */
+.skill-badge {
+    background-color: rgba(57, 255, 143, 0.12);
+    color: var(--aurora-green);
+    border: 1px solid rgba(57, 255, 143, 0.3);
+    font-weight: 500;
+    font-size: 0.78rem;
+    padding: 0.4em 0.8em;
+    border-radius: 50px;
+    transition: background-color 0.2s ease;
+}
+
+.skill-badge:hover {
+    background-color: rgba(57, 255, 143, 0.25);
+}
+
+/* Badge de habilidad blanda — morado aurora */
+.skill-badge-soft {
+    background-color: rgba(191, 95, 255, 0.12);
+    color: var(--aurora-purple);
+    border: 1px solid rgba(191, 95, 255, 0.3);
+    font-weight: 500;
+    font-size: 0.78rem;
+    padding: 0.4em 0.8em;
+    border-radius: 50px;
+    transition: background-color 0.2s ease;
+}
+
+.skill-badge-soft:hover {
+    background-color: rgba(191, 95, 255, 0.25);
+}
+
+/* ================================================
+   EXPERIENCIA / TIMELINE
+   ================================================ */
+.exp-section {
+    background-color: var(--bg-dark);
+}
+
+.timeline-col-title {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* Contenedor del timeline — linea vertical izquierda */
+.timeline {
+    position: relative;
+    padding-left: 28px;
+    border-left: 2px solid rgba(57, 255, 143, 0.25);
+}
+
+.timeline-purple {
+    border-left-color: rgba(191, 95, 255, 0.25);
+}
+
+/* Cada item del timeline */
+.timeline-item {
+    position: relative;
+    margin-bottom: 1.75rem;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Punto de la linea de tiempo — verde */
+.timeline-dot {
+    position: absolute;
+    left: -37px;
+    top: 14px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: var(--aurora-green);
+    border: 2px solid var(--bg-dark);
+    box-shadow: 0 0 8px rgba(57, 255, 143, 0.6);
+}
+
+/* Punto morado */
+.dot-purple {
+    background: var(--aurora-purple);
+    box-shadow: 0 0 8px rgba(191, 95, 255, 0.6);
+}
+
+/* Card del timeline */
+.timeline-card {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(57, 255, 143, 0.12);
+    border-radius: 12px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-card:hover {
+    border-color: rgba(57, 255, 143, 0.35);
+    box-shadow: 0 6px 20px rgba(57, 255, 143, 0.1);
+}
+
+.timeline-purple .timeline-card:hover {
+    border-color: rgba(191, 95, 255, 0.35);
+    box-shadow: 0 6px 20px rgba(191, 95, 255, 0.1);
+}
+
+/* Nombre del rol */
+.timeline-role {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.92rem;
+    margin-bottom: 0;
+    line-height: 1.4;
+}
+
+/* Nombre de la empresa */
+.timeline-company {
+    color: var(--aurora-green);
+    font-size: 0.82rem;
+    font-weight: 500;
+}
+
+.timeline-purple .timeline-company {
+    color: var(--aurora-purple);
+}
+
+/* Badge de fecha — verde */
+.timeline-badge-date {
+    background-color: rgba(57, 255, 143, 0.1);
+    color: var(--aurora-green);
+    border: 1px solid rgba(57, 255, 143, 0.25);
+    font-size: 0.72rem;
+    font-weight: 500;
+    border-radius: 50px;
+    white-space: nowrap;
+}
+
+/* Badge morado (proyectos) */
+.timeline-badge-purple {
+    background-color: rgba(191, 95, 255, 0.1);
+    color: var(--aurora-purple);
+    border: 1px solid rgba(191, 95, 255, 0.25);
+    font-size: 0.72rem;
+    font-weight: 500;
+    border-radius: 50px;
+}
+
+/* Lista de logros */
+.timeline-list {
+    padding-left: 1.1rem;
+    margin-bottom: 0;
+    color: var(--text-muted-aurora);
+    font-size: 0.85rem;
+    line-height: 1.7;
+}
+
+.timeline-list li {
+    margin-bottom: 0.25rem;
+}
+
+/* ================================================
+   CONTACTO
+   ================================================ */
+.contact-section {
+    background-color: var(--bg-card);
+}
+
+.section-subtitle {
+    color: var(--text-muted-aurora);
+    font-size: 1rem;
+}
+
+/* Inputs del formulario */
+.contact-label {
+    color: rgba(255,255,255,0.75);
+    font-size: 0.88rem;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+}
+
+.contact-input {
+    background-color: var(--bg-dark);
+    border: 1px solid rgba(57, 255, 143, 0.2);
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 0.65rem 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-input::placeholder {
+    color: var(--text-muted-aurora);
+    opacity: 0.6;
+}
+
+.contact-input:focus {
+    background-color: var(--bg-dark);
+    color: #ffffff;
+    border-color: var(--aurora-green);
+    box-shadow: 0 0 0 3px rgba(57, 255, 143, 0.15);
+    outline: none;
+}
+
+/* Caja de info de contacto */
+.contact-info-box {
+    background-color: var(--bg-dark);
+    border: 1px solid rgba(57, 255, 143, 0.15);
+    border-radius: 14px;
+    padding: 2rem;
+    height: 100%;
+}
+
+.contact-info-title {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-info-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(57, 255, 143, 0.1);
+    border: 1px solid rgba(57, 255, 143, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--aurora-green);
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.contact-info-label {
+    color: var(--text-muted-aurora);
+    font-size: 0.78rem;
+    margin-bottom: 0.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ================================================
+   FOOTER
+   ================================================ */
+.site-footer {
+    background-color: #030608;
+    border-top: 1px solid rgba(57, 255, 143, 0.12);
+    padding: 1.75rem 0;
+}
+
+.footer-brand {
+    color: var(--aurora-green);
+    font-weight: 800;
+    font-size: 1.3rem;
+    letter-spacing: 3px;
+}
+
+.footer-copy {
+    color: var(--text-muted-aurora);
+    font-size: 0.82rem;
+}
+
+.footer-social-link {
+    color: var(--text-muted-aurora);
+    font-size: 1.15rem;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.footer-social-link:hover {
+    color: var(--aurora-green);
+    transform: translateY(-2px);
+}
+
+/* Link activo del navbar (resaltado al scrollear) */
+.nav-link-active {
+    color: var(--aurora-green) !important;
+    font-weight: 600;
+}
+
+/* ================================================
+   PROYECTOS
+   ================================================ */
+.proyectos-section {
+    background-color: var(--bg-card);
+}
+
+.proyecto-card {
+    background-color: var(--bg-dark);
+    border: 1px solid rgba(57, 255, 143, 0.15);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proyecto-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(57, 255, 143, 0.45);
+    box-shadow: 0 12px 35px rgba(57, 255, 143, 0.15);
+}
+
+.proyecto-card-header {
+    background: linear-gradient(135deg, #0a2a1a, #1a0a2e);
+    padding: 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(57, 255, 143, 0.1);
+}
+
+.proyecto-emoji {
+    font-size: 2.5rem;
+    line-height: 1;
+}
+
+.proyecto-title {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.proyecto-desc {
+    color: var(--text-muted-aurora);
+    font-size: 0.88rem;
+    line-height: 1.75;
+    flex-grow: 1;
+}
+
+.proyecto-desc strong {
+    color: var(--aurora-green);
+    font-weight: 600;
+}
+
+.proyecto-coming-soon {
+    border-style: dashed;
+    border-color: rgba(191, 95, 255, 0.25);
+}
+
+.proyecto-coming-soon:hover {
+    border-color: rgba(191, 95, 255, 0.5);
+    box-shadow: 0 12px 35px rgba(191, 95, 255, 0.1);
+}
+
+.coming-soon-icon {
+    font-size: 3rem;
+    background: linear-gradient(135deg, #39FF8F, #BF5FFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+}
+
+.text-muted-aurora {
+    color: var(--text-muted-aurora);
+    line-height: 1.8;
+}

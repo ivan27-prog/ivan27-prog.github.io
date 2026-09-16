@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ivan Bolaños | Portafolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Bootstrap Icons: https://icons.getbootstrap.com/ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+
+    <!-- ========== NAVBAR ========== -->
+    <!-- 
+        Bootstrap Navbar: https://getbootstrap.com/docs/5.3/components/navbar/
+        - navbar-expand-lg → hamburguesa en pantallas < lg (992px)
+        - fixed-top        → se queda fija arriba al hacer scroll
+        - id="mainNavbar"  → lo usamos en JS para cambiar el fondo al scrollear
+    -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+        <div class="container">
+
+            <!-- Brand: tus iniciales como logo -->
+            <a class="navbar-brand fw-bold" href="#inicio">IB</a>
+
+            <!-- Botón hamburguesa (solo visible en móvil) -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+                aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Links del menú -->
+            <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+                <ul class="navbar-nav gap-2">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre-mi">Acerca de mí</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#proyectos">Proyectos</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+    <!-- ========== FIN NAVBAR ========== -->
+
+
+    <!-- ========== HERO ========== -->
+    <!--
+        Bootstrap Grid: https://getbootstrap.com/docs/5.3/layout/grid/
+        - container          → centra el contenido con márgenes automáticos
+        - row                → fila del grid (usa flexbox internamente)
+        - col-12 col-lg-6    → 100% en móvil, 50% en desktop
+        - align-items-center → centra columnas verticalmente
+        - order-lg-1/2       → controla el orden en desktop vs móvil
+    -->
+    <section id="inicio" class="hero-section">
+        <div class="container">
+            <!--
+                text-center     → todo centrado
+                d-flex / flex-column → apila foto y texto verticalmente
+            -->
+            <div class="d-flex flex-column align-items-center text-center">
+
+                <!-- FOTO ovalada arriba -->
+                <div class="hero-photo-wrapper mb-4">
+                    <img src="assets/ivan.jpeg" alt="Foto de Ivan Bolaños" class="hero-photo">
+                </div>
+
+                <!-- TEXTO debajo de la foto -->
+                <p class="hero-greeting mb-1">Hola, soy</p>
+                <h1 class="hero-name mb-2">Ivan Bolaños</h1>
+                <h2 class="hero-title mb-3">Desarrollador Java Full Stack Jr.</h2>
+
+                <p class="hero-location mb-3">
+                    <i class="bi bi-geo-alt-fill me-1"></i> Ciudad de México
+                </p>
+
+                <p class="hero-description mb-4" style="max-width: 600px;">
+                    Desarrollador Java Full Stack y Consultor técnico con experiencia en
+                    automatización y bases de datos. Diseño soluciones backend robustas,
+                    escalables y listas para entornos de alta exigencia.
+                </p>
+
+                <!-- Iconos de redes sociales -->
+                <div class="d-flex gap-3 justify-content-center mb-4">
+                    <a href="https://github.com/ivan27-prog" target="_blank" class="btn-social" title="GitHub">
+                        <i class="bi bi-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ivan-bolanos-guerrero" target="_blank" class="btn-social"
+                        title="LinkedIn">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="mailto:bolanosivan27@gmail.com" class="btn-social" title="Email">
+                        <i class="bi bi-envelope-fill"></i>
+                    </a>
+                </div>
+
+                <!-- Botones CTA -->
+                <div class="d-flex gap-3 justify-content-center flex-wrap">
+                    <a href="#proyectos" class="btn btn-aurora-primary">Ver proyectos</a>
+                    <a href="#" class="btn btn-aurora-outline">Descargar CV</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- ========== FIN HERO ========== -->
+
+
+    <!-- ========== SOBRE MÍ ========== -->
+    <!--
+        Componentes Bootstrap usados:
+        - Row / Col         → https://getbootstrap.com/docs/5.3/layout/grid/
+        - Card              → https://getbootstrap.com/docs/5.3/components/card/
+        - List Group        → https://getbootstrap.com/docs/5.3/components/list-group/
+        - Bootstrap Icons   → https://icons.getbootstrap.com/
+    -->
+    <section id="sobre-mi" class="sobre-section">
+        <div class="container">
+
+            <!-- Título de sección -->
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Sobre <span class="text-aurora-green">mí</span></h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="row justify-content-center">
+
+                <!-- COLUMNA ÚNICA: Info (sin foto) -->
+                <div class="col-12 col-lg-10">
+
+                    <p class="sobre-description mb-4">
+                        Desarrollador Java Full Stack y Consultor técnico con trayectoria en
+                        automatización y bases de datos. Construí mis bases desde la universidad
+                        diseñando arquitecturas MVC y conectividad JDBC en Java, combinados con
+                        experiencia real resolviendo lógica de negocio e integración de sistemas.
+                        Mi meta es diseñar soluciones backend robustas, escalables y listas
+                        para entornos de alta exigencia.
+                    </p>
+
+                    <!--
+                        Card: https://getbootstrap.com/docs/5.3/components/card/
+                        List Group dentro de Card para mostrar datos de contacto
+                    -->
+                    <div class="card sobre-card">
+                        <div class="card-body p-0">
+                            <!--
+                                List Group: https://getbootstrap.com/docs/5.3/components/list-group/
+                                - list-group-flush → sin bordes redondeados, se integra a la card
+                            -->
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item sobre-list-item">
+                                    <i class="bi bi-person-fill me-2 icon-aurora"></i>
+                                    <span class="label-muted">Nombre:</span>
+                                    Ivan Mauricio Bolaños Guerrero
+                                </li>
+                                <li class="list-group-item sobre-list-item">
+                                    <i class="bi bi-geo-alt-fill me-2 icon-aurora"></i>
+                                    <span class="label-muted">Ubicación:</span>
+                                    Ciudad de México &nbsp;·&nbsp;
+                                    <span class="text-aurora-purple">Disponible para reubicación</span>
+                                </li>
+                                <li class="list-group-item sobre-list-item">
+                                    <i class="bi bi-envelope-fill me-2 icon-aurora"></i>
+                                    <span class="label-muted">Email:</span>
+                                    <a href="mailto:bolanosivan27@gmail.com" class="link-aurora">
+                                        bolanosivan27@gmail.com
+                                    </a>
+                                </li>
+                                <li class="list-group-item sobre-list-item">
+                                    <i class="bi bi-telephone-fill me-2 icon-aurora"></i>
+                                    <span class="label-muted">Teléfono:</span>
+                                    +52 5657786796
+                                </li>
+                                <li class="list-group-item sobre-list-item">
+                                    <i class="bi bi-mortarboard-fill me-2 icon-aurora"></i>
+                                    <span class="label-muted">Formación:</span>
+                                    Lic. en Informática — Universidad de Londres
+                                </li>
+                                <li class="list-group-item sobre-list-item">
+                                    <i class="bi bi-translate me-2 icon-aurora"></i>
+                                    <span class="label-muted">Idiomas:</span>
+                                    Español (nativo) &nbsp;·&nbsp; Inglés B2
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========== FIN SOBRE MÍ ========== -->
+
+
+    <!-- ========== SKILLS ========== -->
+    <!--
+        Componentes Bootstrap usados:
+        - Row / Col   → https://getbootstrap.com/docs/5.3/layout/grid/
+        - Card        → https://getbootstrap.com/docs/5.3/components/card/
+        - Badge       → https://getbootstrap.com/docs/5.3/components/badge/
+        - Icons       → https://icons.getbootstrap.com/
+    -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+
+            <!-- Título -->
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Mis <span class="text-aurora-green">Skills</span></h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <!--
+                g-4          → gap de 1.5rem entre cards
+                col-12       → 1 columna en móvil
+                col-sm-6     → 2 columnas en tablet
+                col-lg-3     → 4 columnas en desktop
+            -->
+            <div class="row g-4 mb-4">
+
+                <!-- CARD 1: Backend -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card skill-card h-100">
+                        <div class="card-body">
+                            <div class="skill-card-icon mb-3">
+                                <i class="bi bi-server"></i>
+                            </div>
+                            <h5 class="skill-card-title">Backend</h5>
+                            <div class="d-flex flex-wrap gap-2 mt-3">
+                                <span class="badge skill-badge">Java</span>
+                                <span class="badge skill-badge">Spring Boot</span>
+                                <span class="badge skill-badge">Python</span>
+                                <span class="badge skill-badge">APIs REST</span>
+                                <span class="badge skill-badge">JDBC</span>
+                                <span class="badge skill-badge">Arquitectura MVC</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 2: Frontend -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card skill-card h-100">
+                        <div class="card-body">
+                            <div class="skill-card-icon mb-3">
+                                <i class="bi bi-layout-wtf"></i>
+                            </div>
+                            <h5 class="skill-card-title">Frontend</h5>
+                            <div class="d-flex flex-wrap gap-2 mt-3">
+                                <span class="badge skill-badge">HTML5</span>
+                                <span class="badge skill-badge">CSS3</span>
+                                <span class="badge skill-badge">JavaScript</span>
+                                <span class="badge skill-badge">Bootstrap 5</span>
+                                <span class="badge skill-badge">Fetch API</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 3: Datos & Cloud -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card skill-card h-100">
+                        <div class="card-body">
+                            <div class="skill-card-icon mb-3">
+                                <i class="bi bi-cloud-fill"></i>
+                            </div>
+                            <h5 class="skill-card-title">Datos & Cloud</h5>
+                            <div class="d-flex flex-wrap gap-2 mt-3">
+                                <span class="badge skill-badge">SQL</span>
+                                <span class="badge skill-badge">BigQuery</span>
+                                <span class="badge skill-badge">GCP</span>
+                                <span class="badge skill-badge">Looker Studio</span>
+                                <span class="badge skill-badge">Power BI</span>
+                                <span class="badge skill-badge">ETL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 4: Herramientas -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card skill-card h-100">
+                        <div class="card-body">
+                            <div class="skill-card-icon mb-3">
+                                <i class="bi bi-tools"></i>
+                            </div>
+                            <h5 class="skill-card-title">Herramientas</h5>
+                            <div class="d-flex flex-wrap gap-2 mt-3">
+                                <span class="badge skill-badge">Git & GitHub</span>
+                                <span class="badge skill-badge">Selenium</span>
+                                <span class="badge skill-badge">n8n</span>
+                                <span class="badge skill-badge">ERP Intelisis</span>
+                                <span class="badge skill-badge">Jira</span>
+                                <span class="badge skill-badge">Scrum</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- FILA 2: Habilidades blandas (card ancha) -->
+            <div class="row g-4">
+                <div class="col-12">
+                    <div class="card skill-card">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center gap-2 mb-3">
+                                <i class="bi bi-stars skill-card-icon-inline"></i>
+                                <h5 class="skill-card-title mb-0">Habilidades Blandas</h5>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge skill-badge-soft">Trabajo colaborativo</span>
+                                <span class="badge skill-badge-soft">Comunicación asertiva</span>
+                                <span class="badge skill-badge-soft">Resolución de problemas</span>
+                                <span class="badge skill-badge-soft">Pensamiento crítico</span>
+                                <span class="badge skill-badge-soft">Adaptabilidad</span>
+                                <span class="badge skill-badge-soft">Gestión del tiempo</span>
+                                <span class="badge skill-badge-soft">Análisis de requerimientos</span>
+                                <span class="badge skill-badge-soft">Orientación a resultados</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- ========== FIN SKILLS ========== -->
+
+
+    <!-- ========== EXPERIENCIA ========== -->
+    <!--
+        Componentes Bootstrap:
+        - Row / Col  → https://getbootstrap.com/docs/5.3/layout/grid/
+        - Card       → https://getbootstrap.com/docs/5.3/components/card/
+        - Badge      → https://getbootstrap.com/docs/5.3/components/badge/
+    -->
+    <section id="experiencia" class="exp-section">
+        <div class="container">
+
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Mi <span class="text-aurora-green">Trayectoria</span></h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <!-- Dos columnas: Trabajo | Educación & Proyectos -->
+            <div class="row g-5">
+
+                <!-- ── COLUMNA IZQUIERDA: Experiencia laboral ── -->
+                <div class="col-12 col-lg-6">
+                    <h4 class="timeline-col-title mb-4">
+                        <i class="bi bi-briefcase-fill me-2 text-aurora-green"></i>Experiencia Laboral
+                    </h4>
+
+                    <!-- Timeline wrapper -->
+                    <div class="timeline">
+
+                        <!-- Item 1 -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="card timeline-card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-1">
+                                        <h6 class="timeline-role">Transformación Digital y Análisis de Datos Jr.</h6>
+                                        <span class="badge timeline-badge-date">Jun 2025 – Jul 2026</span>
+                                    </div>
+                                    <p class="timeline-company mb-2">
+                                        <i class="bi bi-building me-1"></i>MEXAMERIK
+                                    </p>
+                                    <ul class="timeline-list">
+                                        <li>Agentes de IA en n8n con Gemini y MongoDB para consultas en BigQuery.</li>
+                                        <li>Pipelines ETL con Selenium, n8n y Google Cloud Storage.</li>
+                                        <li>Dashboards en Looker Studio conectados a BigQuery en tiempo real.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="card timeline-card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-1">
+                                        <h6 class="timeline-role">Becario de Implementación de ERP</h6>
+                                        <span class="badge timeline-badge-date">Feb 2026 – Jun 2026</span>
+                                    </div>
+                                    <p class="timeline-company mb-2">
+                                        <i class="bi bi-building me-1"></i>INTELISIS SOFTWARE
+                                    </p>
+                                    <ul class="timeline-list">
+                                        <li>Reportes a la medida en SQL Server para métricas clave.</li>
+                                        <li>Gestión de seguridad ERP: matriz de accesos, roles y permisos.</li>
+                                        <li>Levantamiento de requerimientos e incidencias de segundo nivel.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="card timeline-card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-1">
+                                        <h6 class="timeline-role">Analista de Datos</h6>
+                                        <span class="badge timeline-badge-date">Ene 2025 – Abr 2025</span>
+                                    </div>
+                                    <p class="timeline-company mb-2">
+                                        <i class="bi bi-building me-1"></i>DELOITTE
+                                    </p>
+                                    <ul class="timeline-list">
+                                        <li>Conciliaciones y auditorías contables con SQL Server y Omnia Data.</li>
+                                        <li>Dashboards dinámicos con SQL, Python, Excel y Power BI.</li>
+                                        <li>Auditorías financieras con equipos de Argentina y Colombia.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><!-- /timeline -->
+                </div>
+
+                <!-- ── COLUMNA DERECHA: Educación & Proyectos ── -->
+                <div class="col-12 col-lg-6">
+                    <h4 class="timeline-col-title mb-4">
+                        <i class="bi bi-mortarboard-fill me-2 text-aurora-purple"></i>Educación & Proyectos
+                    </h4>
+
+                    <div class="timeline timeline-purple">
+
+                        <!-- Educación 1 -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot dot-purple"></div>
+                            <div class="card timeline-card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-1">
+                                        <h6 class="timeline-role">Bootcamp — Desarrollador Java Fullstack</h6>
+                                        <span class="badge timeline-badge-date">Jul 2026 – Oct 2026</span>
+                                    </div>
+                                    <p class="timeline-company mb-0">
+                                        <i class="bi bi-building me-1"></i>Generation México
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Proyecto 1 -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot dot-purple"></div>
+                            <div class="card timeline-card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-1">
+                                        <h6 class="timeline-role">Dev & Scrum Master — RUTTA</h6>
+                                        <span class="badge timeline-badge-purple">Proyecto académico</span>
+                                    </div>
+                                    <p class="timeline-company mb-2">
+                                        <i class="bi bi-code-slash me-1"></i>Generation México
+                                    </p>
+                                    <ul class="timeline-list">
+                                        <li>API RESTful con Java (Spring Boot) y MySQL.</li>
+                                        <li>Interfaz con JS (ES6), Bootstrap 5 y Fetch API.</li>
+                                        <li>Gestión de sprints en Jira y control de versiones en GitHub.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Proyecto 2 -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot dot-purple"></div>
+                            <div class="card timeline-card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-1">
+                                        <h6 class="timeline-role">Dev — Extracción Regulatoria (DOF)</h6>
+                                        <span class="badge timeline-badge-date">Abr 2026 – May 2026</span>
+                                    </div>
+                                    <p class="timeline-company mb-2">
+                                        <i class="bi bi-code-slash me-1"></i>Proyecto personal
+                                    </p>
+                                    <ul class="timeline-list">
+                                        <li>Pipeline Python + Selenium para extracción del DOF.</li>
+                                        <li>API de Gemini para síntesis de normativas legales.</li>
+                                        <li>Generación de resúmenes en audio con TTS.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Educación 2 -->
+                        <div class="timeline-item">
+                            <div class="timeline-dot dot-purple"></div>
+                            <div class="card timeline-card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-1">
+                                        <h6 class="timeline-role">Lic. en Informática</h6>
+                                        <span class="badge timeline-badge-date">Ene 2023 – Ene 2026</span>
+                                    </div>
+                                    <p class="timeline-company mb-0">
+                                        <i class="bi bi-building me-1"></i>Universidad de Londres
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><!-- /timeline -->
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- ========== FIN EXPERIENCIA ========== -->
+
+    <!-- ========== PROYECTOS ========== -->
+    <!--
+        Componentes Bootstrap:
+        - Card      → https://getbootstrap.com/docs/5.3/components/card/
+        - Badge     → https://getbootstrap.com/docs/5.3/components/badge/
+        - Grid      → https://getbootstrap.com/docs/5.3/layout/grid/
+        - Button    → https://getbootstrap.com/docs/5.3/components/buttons/
+    -->
+    <section id="proyectos" class="proyectos-section">
+        <div class="container">
+
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Mis <span class="text-aurora-green">Proyectos</span></h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+
+                <!-- ── CARD: Hackathon Harry Potter ── -->
+                <!--
+                    Card: https://getbootstrap.com/docs/5.3/components/card/
+                    h-100 → iguala altura de todas las cards
+                -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card proyecto-card h-100">
+
+                        <!-- Encabezado decorativo de la card -->
+                        <div class="proyecto-card-header">
+                            <span class="proyecto-emoji">⚡</span>
+                        </div>
+
+                        <div class="card-body d-flex flex-column">
+                            <!-- Título -->
+                            <h5 class="proyecto-title">Hackathon — Casa Ravenclaw</h5>
+
+                            <!-- Descripción -->
+                            <p class="proyecto-desc">
+                                App temática de Harry Potter con acceso protegido:
+                                solo entras si respondes correctamente la pregunta
+                                del guardián de Ravenclaw. Incluye <strong>flip cards</strong>
+                                de personajes principales con descripción y una
+                                <strong>tienda</strong> de varitas, pociones y hechizos.
+                            </p>
+
+                            <!-- Badges de tecnologías -->
+                            <!-- Badge: https://getbootstrap.com/docs/5.3/components/badge/ -->
+                            <div class="d-flex flex-wrap gap-2 mb-4">
+                                <span class="badge skill-badge">HTML5</span>
+                                <span class="badge skill-badge">CSS3</span>
+                                <span class="badge skill-badge">JavaScript</span>
+                                <span class="badge skill-badge">Bootstrap</span>
+                            </div>
+
+                            <!-- Botón al final de la card (mt-auto empuja hacia abajo) -->
+                            <div class="mt-auto">
+                                <a href="https://github.com/ivan27-prog/hackaton-harry-potter"
+                                   target="_blank"
+                                   class="btn btn-aurora-primary w-100">
+                                    <i class="bi bi-github me-2"></i>Ver en GitHub
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- ── CARD: Próximamente ── -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card proyecto-card proyecto-coming-soon h-100">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center text-center py-5">
+                            <div class="coming-soon-icon mb-3">
+                                <i class="bi bi-hourglass-split"></i>
+                            </div>
+                            <h5 class="text-white mb-2">Más proyectos en camino</h5>
+                            <p class="text-muted-aurora mb-0">
+                                Actualmente trabajando en nuevos proyectos.<br>
+                                ¡Vuelve pronto!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- ========== FIN PROYECTOS ========== -->
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <div class="col-12 col-md-4 text-center text-md-start mb-3 mb-md-0">
+                    <span class="footer-brand">IB</span>
+                </div>
+
+                <div class="col-12 col-md-4 text-center mb-3 mb-md-0">
+                    <p class="footer-copy mb-0">
+                        &copy; 2026 Ivan Bolaños. Hecho con ❤️ y Bootstrap 5.
+                    </p>
+                </div>
+
+                <div class="col-12 col-md-4 text-center text-md-end">
+                    <div class="d-flex gap-3 justify-content-center justify-content-md-end">
+                        <a href="https://github.com/ivan27-prog" target="_blank" class="footer-social-link" title="GitHub">
+                            <i class="bi bi-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/ivan-bolanos-guerrero" target="_blank" class="footer-social-link" title="LinkedIn">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a href="#inicio" class="footer-social-link" title="Volver arriba">
+                            <i class="bi bi-arrow-up-circle-fill"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    <!-- ========== FIN FOOTER ========== -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
